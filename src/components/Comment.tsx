@@ -1,15 +1,17 @@
+import { IComment } from "../types/Comment";
+
 type Props = {
-  color: string;
+  comment: IComment;
 };
 
-const Comment = ({ color }: Props) => {
+const Comment = ({ comment }: Props) => {
   return (
     <article className='comment'>
       <aside
         className='comment__color'
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: comment.color }}
       ></aside>
-      <pre className='comment__text'>Some comment</pre>
+      <pre className='comment__text'>{comment.text}</pre>
     </article>
   );
 };

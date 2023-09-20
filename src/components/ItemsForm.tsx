@@ -4,7 +4,7 @@ import Item from "./Item";
 import { toast } from "react-hot-toast";
 
 const ItemsForm = () => {
-  const { items } = useAppSelector((state) => state.items);
+  const { data } = useAppSelector((state) => state.items);
   const dispatch = useAppDispatch();
   const [itemName, setItemName] = useState<string>("");
 
@@ -47,7 +47,7 @@ const ItemsForm = () => {
         </button>
       </form>
       <ul>
-        {items.map((item) => (
+        {data.map((item) => (
           <li
             key={item.id}
             className='borders'

@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IItem } from "../../types/Item";
 import { v4 as uuidv4 } from "uuid";
+import { addComment } from "..";
 
 type InitialState = {
-  items: IItem[];
+  data: IItem[];
   selected: string | null;
 };
 
 const initialState: InitialState = {
-  items: [],
+  data: [],
   selected: null,
 };
 
@@ -23,14 +24,14 @@ export const itemsSlice = createSlice({
         count: 0,
       };
 
-      if (state.items.length === 0) {
+      if (state.data.length === 0) {
         state.selected = newItem.id;
       }
 
-      state.items.push(newItem);
+      state.data.push(newItem);
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.data = state.data.filter((item) => item.id !== action.payload);
 
       if (state.selected === action.payload) {
         state.selected = null;
@@ -39,6 +40,20 @@ export const itemsSlice = createSlice({
     selectItem: (state, action) => {
       state.selected = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(addComment, (state) => {
+      state.data = state.data.map((item) => {
+        if (item.id === state.selected) {
+          return {
+            ...item,
+            count: item.count + 1,
+          };
+        }
+
+        return item;
+      });
+    });
   },
 });
 
