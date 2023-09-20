@@ -1,0 +1,20 @@
+.card {
+  min-width: 50rem;
+  max-width: 60rem;
+  box-shadow: $shadow;
+  height: fit-content;
+  padding: 1rem;
+
+  &__heading {
+    color: grey;
+    font-size: 4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__form {
+    display: flex;
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+  }
+}
