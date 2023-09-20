@@ -42,4 +42,4 @@ export const itemsSlice = createSlice({
   },
 });
 
-export const { addItem } = itemsSlice.actions;
+export const { addItem, removeItem, selectItem } = itemsSlice.actions;

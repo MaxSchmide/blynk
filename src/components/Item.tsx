@@ -1,6 +1,12 @@
 import classNames from "classnames";
 import { IItem } from "../types/Item";
-import { useAppSelector } from "../store";
+import {
+  removeItem,
+  selectItem,
+  useAppDispatch,
+  useAppSelector,
+} from "../store";
+import { MouseEvent, useRef } from "react";
 
 type Props = {
   item: IItem;
@@ -8,15 +14,34 @@ type Props = {
 
 const Item = ({ item }: Props) => {
   const { selected } = useAppSelector((state) => state.items);
+  const dispatch = useAppDispatch();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const handleDeleteItem = (id: string) => {
+    dispatch(removeItem(id));
+  };
+
+  const handleSelectItem = (e: MouseEvent) => {
+    if (e.target !== buttonRef.current) {
+      dispatch(selectItem(item.id));
+    }
+  };
   return (
     <article
       className={classNames("item", {
         item__selected: selected === item.id,
       })}
+      onClick={handleSelectItem}
     >
       <h3 className='item__title'>{item.name}</h3>
       <span className='item__count'>{item.count}</span>
-      <button className='btn btn--danger '>Delete</button>
+      <button
+        ref={buttonRef}
+        className='btn btn--danger'
+        onClick={() => handleDeleteItem(item.id)}
+      >
+        Delete
+      </button>
     </article>
   );
 };
