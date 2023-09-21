@@ -1,4 +1,4 @@
-# Todo and Comment Management App
+# Todo and Comment Management App [DEMO](https://maxschmide.github.io/blynk/)
 
 This App is a React-based web application designed to help you efficiently manage your todos and the comments associated with them. With a user-friendly interface and state management powered by Redux Toolkit, app makes it easy to keep track of your tasks and collaborate with others through comments.
 
@@ -21,7 +21,7 @@ To get started with App, follow these steps:
 1. **Clone the Repository**: Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/blynk.git
+git clone https://github.com/maxschmide/blynk.git
 ```
 
 2. **Install Dependencies**: Navigate to the project directory and install the required dependencies.
