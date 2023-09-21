@@ -13,10 +13,15 @@ export const commentsSlice = createSlice({
   name: "comments",
   initialState,
   reducers: {
+    setInitComments: (state) => {
+      state.data = JSON.parse(localStorage.getItem("comments") as string) || [];
+    },
     addComment: (state, action) => {
       state.data.push(action.payload);
+
+      localStorage.setItem("comments", JSON.stringify(state.data));
     },
   },
 });
 
-export const { addComment } = commentsSlice.actions;
+export const { addComment, setInitComments } = commentsSlice.actions;

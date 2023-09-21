@@ -17,6 +17,10 @@ export const itemsSlice = createSlice({
   name: "items",
   initialState,
   reducers: {
+    setInitItems: (state) => {
+      state.data = JSON.parse(localStorage.getItem("items")!) || [];
+      state.selected = JSON.parse(localStorage.getItem("selected")!) || null;
+    },
     addItem: (state, action) => {
       const newItem = {
         id: uuidv4(),
@@ -26,9 +30,13 @@ export const itemsSlice = createSlice({
 
       if (state.data.length === 0) {
         state.selected = newItem.id;
+
+        localStorage.setItem("selected", JSON.stringify(state.selected));
       }
 
       state.data.push(newItem);
+
+      localStorage.setItem("items", JSON.stringify(state.data));
     },
     removeItem: (state, action) => {
       state.data = state.data.filter((item) => item.id !== action.payload);
@@ -36,9 +44,13 @@ export const itemsSlice = createSlice({
       if (state.selected === action.payload) {
         state.selected = null;
       }
+
+      localStorage.setItem("items", JSON.stringify(state.data));
     },
     selectItem: (state, action) => {
       state.selected = action.payload;
+
+      localStorage.setItem("selected", JSON.stringify(state.selected));
     },
   },
   extraReducers: (builder) => {
@@ -53,8 +65,11 @@ export const itemsSlice = createSlice({
 
         return item;
       });
+
+      localStorage.setItem("items", JSON.stringify(state.data));
     });
   },
 });
 
-export const { addItem, removeItem, selectItem } = itemsSlice.actions;
+export const { addItem, removeItem, selectItem, setInitItems } =
+  itemsSlice.actions;
