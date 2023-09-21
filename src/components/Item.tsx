@@ -1,12 +1,12 @@
 import classNames from "classnames";
-import { IItem } from "../types/Item";
+import { MouseEvent } from "react";
 import {
   removeItem,
   selectItem,
   useAppDispatch,
   useAppSelector,
 } from "../store";
-import { MouseEvent, useRef } from "react";
+import { IItem } from "../types/Item";
 
 type Props = {
   item: IItem;
@@ -15,30 +15,27 @@ type Props = {
 const Item = ({ item }: Props) => {
   const { selected } = useAppSelector((state) => state.items);
   const dispatch = useAppDispatch();
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const handleDeleteItem = (id: string) => {
+  const handleDeleteItem = (e: MouseEvent, id: string) => {
+    e.stopPropagation();
     dispatch(removeItem(id));
   };
 
-  const handleSelectItem = (e: MouseEvent) => {
-    if (e.target !== buttonRef.current) {
-      dispatch(selectItem(item.id));
-    }
+  const handleSelectItem = (id: string) => {
+    dispatch(selectItem(id));
   };
   return (
     <article
       className={classNames("item", {
         item__selected: selected === item.id,
       })}
-      onClick={handleSelectItem}
+      onClick={() => handleSelectItem(item.id)}
     >
       <h3 className='item__title'>{item.name}</h3>
       <span className='item__count'>{item.count}</span>
       <button
-        ref={buttonRef}
         className='btn btn--danger'
-        onClick={() => handleDeleteItem(item.id)}
+        onClick={(e) => handleDeleteItem(e, item.id)}
       >
         Delete
       </button>
