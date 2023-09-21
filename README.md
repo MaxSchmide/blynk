@@ -51,15 +51,9 @@ This will launch the application in your default web browser.
 
 - **Adding Todos**: Click the "Add Todo" button to create a new todo. Provide a title and description for the todo and click "Save."
 
-- **Editing Todos**: To edit a todo, click the edit icon next to the todo. Update the title or description as needed and click "Save."
-
 - **Deleting Todos**: To delete a todo, click the delete icon next to the todo.
 
-- **Completing Todos**: Mark a todo as completed by clicking the checkbox next to it. You can filter todos based on their completion status using the filter options.
-
 - **Adding Comments**: To leave a comment on a todo, click the "Add Comment" button within the todo card. Enter your comment text and click "Add."
-
-- **Managing Comments**: You can view and delete comments associated with a todo by clicking the "Comments" button within the todo card.
 
 # Technologies Used
 
