@@ -76,7 +76,7 @@ const CommentsForm = () => {
           type='submit'
           className='btn btn--primary'
         >
-          Add New
+          Add Comment
         </button>
       </form>
     </section>

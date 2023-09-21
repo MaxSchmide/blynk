@@ -1,27 +1,70 @@
-# React + TypeScript + Vite
+# Todo and Comment Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This App is a React-based web application designed to help you efficiently manage your todos and the comments associated with them. With a user-friendly interface and state management powered by Redux Toolkit, app makes it easy to keep track of your tasks and collaborate with others through comments.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Todo Management**: Create, edit, and delete todos effortlessly. Mark todos as completed when they're done, or filter them based on their status.
 
-## Expanding the ESLint configuration
+- **Comment Collaboration**: Leave comments on todos to discuss details, provide updates, or collaborate with your team members.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **User-Friendly Interface**: App offers an intuitive and responsive user interface to ensure a smooth and enjoyable user experience.
 
-- Configure the top-level `parserOptions` property like this:
+- **State Management**: Redux Toolkit is used for efficient state management, ensuring that your data remains consistent and synchronized across the application.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+- **Styling with SASS**: The application's visual design is enhanced with SASS, making it easy to customize the styling to suit your preferences.
+
+# Getting Started
+
+To get started with App, follow these steps:
+
+1. **Clone the Repository**: Clone this repository to your local machine.
+
+```bash
+git clone https://github.com/your-username/blynk.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Install Dependencies**: Navigate to the project directory and install the required dependencies.
+
+```bash
+cd blynk
+# NPM
+npm install
+
+# YARN
+yarn
+```
+
+3. **Run the Application**: Start the development server to run the application locally.
+
+```bash
+# NPM
+npm run dev
+
+# YARN
+yarn dev
+```
+
+This will launch the application in your default web browser.
+
+# Usage
+
+- **Adding Todos**: Click the "Add Todo" button to create a new todo. Provide a title and description for the todo and click "Save."
+
+- **Editing Todos**: To edit a todo, click the edit icon next to the todo. Update the title or description as needed and click "Save."
+
+- **Deleting Todos**: To delete a todo, click the delete icon next to the todo.
+
+- **Completing Todos**: Mark a todo as completed by clicking the checkbox next to it. You can filter todos based on their completion status using the filter options.
+
+- **Adding Comments**: To leave a comment on a todo, click the "Add Comment" button within the todo card. Enter your comment text and click "Add."
+
+- **Managing Comments**: You can view and delete comments associated with a todo by clicking the "Comments" button within the todo card.
+
+# Technologies Used
+
+- React
+- Redux Toolkit
+- SASS
+- Vite
+- TypeScript

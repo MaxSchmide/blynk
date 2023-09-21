@@ -43,7 +43,7 @@ const ItemsForm = () => {
           type='submit'
           className='btn btn--primary'
         >
-          Add New
+          Add Todo
         </button>
       </form>
       <ul>
