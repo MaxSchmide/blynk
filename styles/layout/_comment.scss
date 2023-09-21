@@ -1,0 +1,19 @@
+.comment {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem;
+
+  margin-bottom: 1rem;
+
+  &__color {
+    height: 5rem;
+    width: 5rem;
+  }
+  &__text {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    background: white;
+    height: 5rem;
+    width: calc(100% - 5rem);
+  }
+}

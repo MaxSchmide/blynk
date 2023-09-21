@@ -1,0 +1,32 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  padding: 1.2rem 2rem;
+
+  background: white;
+
+  &__count {
+    position: absolute;
+    right: 12rem;
+    padding: 0.2rem 0.75rem;
+
+    display: inline-block;
+
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    background: $color-primary;
+    color: white;
+    border-radius: 16rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+  }
+  &__selected {
+    border-left: 4px solid deeppink;
+  }
+}

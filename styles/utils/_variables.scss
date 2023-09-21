@@ -1,0 +1,20 @@
+//#region Colors
+
+$color-primary: #007bff;
+$color-primary-hover: #0069d9;
+$color-secondary: #2b2f3e;
+$color-danger: #dc3545;
+$color-bg: #f9f9f9;
+$color-input-border: #ced4da;
+$shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
+//#endregion
+
+//#region Breakpoints
+
+$breakpoint-small: 30rem; // phone 0-480 px
+$breakpoint-medium: 64rem; //tablet 480-1024 px
+$breakpoint-big: 64rem; // desktop 1024+ px
+$breakpoint-huge: 81.25rem; // desktop 1300px
+
+//#endregion
